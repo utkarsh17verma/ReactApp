@@ -5,27 +5,20 @@ import { Link } from 'react-router-dom';
 function RenderLeader({leader}) {
     return(
             <Media>
-                <div className="col-12 col-md-2">
-                    <Media left href="#">
-                    <Media object src={leader.image} alt="image" />
-                    </Media>
-                </div>
-                <div className="col-12">
-                    <Media body>
-                        <Media heading>
+                <Media left href="#">
+                <Media object src={leader.image} alt="image" />
+                </Media>
+                <Media body className="ml-4">
+                    <Media heading>
                         {leader.name}
-                        </Media>
-                        <Media>
-                        {leader.designation}
-                        </Media>
-                        <Media>
-                        {leader.description}
-                        </Media>
                     </Media>
-                </div> 
+                        {leader.designation}
+                        <br/>
+                        {leader.description}
+                </Media>
             </Media>   
-    );
-}
+            );
+        }
 
 const About =(props) => {
     const leaders = props.leaders.map((leader) => {
@@ -90,7 +83,7 @@ const About =(props) => {
                 </div>
             </div>
             <div className="row row-content">
-                <div className="col-12 mb-3">
+                <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12">
